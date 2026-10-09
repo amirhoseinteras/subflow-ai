@@ -1,0 +1,19 @@
+# SubFlow AI — Turkish desktop interface community fork
+
+Repository: https://github.com/amirhoseinteras/subflow-ai
+Upstream original: https://github.com/sadraahkami/subflow-ai
+License: MIT, retained from upstream.
+
+## What is included
+- Original offline speech-to-text and subtitle studio based on faster-whisper.
+- Turkish (tr-TR) GUI messages for 50 interface keys; original Persian and English interfaces remain.
+- Three-language switcher: Persian, English, Turkish.
+- Five new unit tests for translation coverage and format placeholders.
+
+## Scope / limitations
+- The upstream already supported Turkish as a transcription language. This fork adds UI translations only.
+- Tested with 16 passing Python unit tests on Windows, including 5 new localization tests.
+- No dedicated Windows executable or installer is published by this fork.
+- Faster-whisper inference and full graphical integration have not been end-to-end validated for this fork.
+
+Read the README.md, FORK_CHANGES.md, LICENSE and source code before use.
