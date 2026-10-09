@@ -1,8 +1,10 @@
 """
-Internationalization (i18n) module supporting Persian (RTL) and English (LTR).
+Internationalization (i18n) for Persian (RTL), English and Turkish (LTR).
 """
 
 from typing import Dict, Optional
+
+from .i18n_tr import TR_TRANSLATIONS
 
 TRANSLATIONS: Dict[str, Dict[str, str]] = {
     "app_title": {
@@ -169,7 +171,7 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
     },
     "lang_toggle_btn": {
         "fa": "English",
-        "en": "فارسی"
+        "en": "Türkçe"
     },
     # Status & Progress
     "ready": {
@@ -214,6 +216,10 @@ TRANSLATIONS: Dict[str, Dict[str, str]] = {
     }
 }
 
+# Keep the original English/Persian catalogs and add a third language.
+for _key, _translation in TR_TRANSLATIONS.items():
+    TRANSLATIONS[_key]["tr"] = _translation
+
 _current_language: str = "fa"
 
 
@@ -223,7 +229,7 @@ def get_current_language() -> str:
 
 def set_current_language(lang: str) -> None:
     global _current_language
-    if lang in ("fa", "en"):
+    if lang in ("fa", "en", "tr"):
         _current_language = lang
 
 
