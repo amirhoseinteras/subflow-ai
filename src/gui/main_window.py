@@ -328,7 +328,10 @@ class MainWindow(QMainWindow):
         self.btn_open_folder.setEnabled(self.latest_output_path is not None)
 
     def _toggle_language(self):
-        new_lang = "en" if get_current_language() == "fa" else "fa"
+        # Cycle Persian -> English -> Turkish -> Persian; Turkish is LTR.
+        languages = ("fa", "en", "tr")
+        current = get_current_language()
+        new_lang = languages[(languages.index(current) + 1) % len(languages)]
         set_current_language(new_lang)
         self._retranslate_ui()
 
